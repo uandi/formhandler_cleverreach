@@ -1,4 +1,5 @@
 <?php
+namespace Typoheads\Formhandler\Finisher;
 /***************************************************************
 *  Copyright notice
 *
@@ -29,7 +30,7 @@
  * @package	Tx_Formhandler
  * @subpackage	Finisher
  */
-class Tx_Formhandler_Finisher_CleverReach extends Tx_Formhandler_AbstractFinisher {
+class CleverReach extends AbstractFinisher {
 	
 	const STATUS_SUCCESS = "SUCCESS";
 

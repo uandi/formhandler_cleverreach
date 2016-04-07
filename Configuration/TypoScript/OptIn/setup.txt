@@ -11,12 +11,14 @@ plugin.Tx_Formhandler.settings.predef.cleverreach_example_optin {
     langFile.1 = EXT:formhandler_cleverreach/Resources/Private/Language/formhandler.xml
     cssFile.1 = EXT:formhandler_cleverreach/Resources/Public/CSS/styles.css
     
-    additionalIncludePaths.1 = EXT:formhandler_cleverreach/Classes/Formhandler
-    
+
     formValuesPrefix = formhandler
-    
-    preProcessors.1.class = Tx_Formhandler_PreProcessor_CleverReach
-    
+
+    additionalIncludePaths.1 = EXT:formhandler_cleverreach/Classes/Formhandler/Finisher
+    additionalIncludePaths.2 = EXT:formhandler_cleverreach/Classes/Formhandler/PreProcessor
+    additionalIncludePaths.3 = EXT:formhandler_cleverreach/Classes/Formhandler/Validator
+    preProcessors.1.class = Typoheads\Formhandler\PreProcessor\CleverReach
+
     fillValueMarkersBeforeLangMarkers = 1
 
     # HTML wrapping by validation error

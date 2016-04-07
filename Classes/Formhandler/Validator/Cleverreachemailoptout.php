@@ -1,4 +1,5 @@
 <?php
+namespace Typoheads\Formhandler\Validator\ErrorCheck;
 /***************************************************************
 *  Copyright notice
 *
@@ -29,12 +30,10 @@
  * @package	Tx_Formhandler
  * @subpackage	ErrorChecks
  */
-class Tx_Formhandler_ErrorCheck_Cleverreachemailoptout extends Tx_Formhandler_ErrorCheck_Cleverreachemail {
+class Cleverreachemailoptout extends AbstractErrorCheck {
 
 	public function check() {
-		$checkFailed = parent::check();
-		if ($checkFailed != '') return $checkFailed;
-		
+
 		if (!$this->subscriber_found || !$this->subscriber_active) {
 			// nicht im System oder inaktiv
 			

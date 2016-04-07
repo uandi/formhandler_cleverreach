@@ -1,4 +1,5 @@
 <?php
+namespace Typoheads\Formhandler\Validator\ErrorCheck;
 /***************************************************************
 *  Copyright notice
 *
@@ -30,7 +31,7 @@
  * @package	Tx_Formhandler
  * @subpackage	ErrorChecks
  */
-class Tx_Formhandler_ErrorCheck_Cleverreachemail extends Tx_Formhandler_AbstractErrorCheck {
+class Cleverreachemail extends AbstractErrorCheck {
 
 	protected $subscriber_found = FALSE;
 	
@@ -39,14 +40,14 @@ class Tx_Formhandler_ErrorCheck_Cleverreachemail extends Tx_Formhandler_Abstract
 	public function check() {
 		$checkFailed = '';
 		
-		$soap = new SoapClient($this->settings['params']['config.']['wsdlUrl']);
+		$soap = new \SoapClient($this->settings['params']['config.']['wsdlUrl']);
 		
 		$return = $soap->receiverGetByEmail($this->settings['params']['config.']['apiKey'], $this->settings['params']['config.']['listId'], trim($this->gp[$this->formFieldName]),0);
 		if ($return->statuscode == 1) return "apikey";
 		
 		$this->subscriber_active = $return->data->active;
 		
-		$this->subscriber_found = ($return->status == Tx_Formhandler_Finisher_CleverReach::STATUS_SUCCESS);
+		$this->subscriber_found = ($return->status == \Typoheads\Formhandler\Finisher::STATUS_SUCCESS);
 		
 		return $checkFailed;
 	}

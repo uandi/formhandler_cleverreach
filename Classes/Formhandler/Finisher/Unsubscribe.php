@@ -1,4 +1,5 @@
 <?php
+namespace Typoheads\Formhandler\Finisher;
 /***************************************************************
 *  Copyright notice
 *
@@ -29,7 +30,7 @@
  * @package	Tx_Formhandler
  * @subpackage	Finisher
  */
-class Tx_Formhandler_Finisher_Unsubscribe extends Tx_Formhandler_Finisher_CleverReach {
+class Unsubscribe extends CleverReach {
 
 	/**
 	 * The main method called by the controller
@@ -49,7 +50,7 @@ class Tx_Formhandler_Finisher_Unsubscribe extends Tx_Formhandler_Finisher_Clever
 	 */
 	protected function removeReceiver() {
 
-		$soap = new SoapClient($this->settings['wsdlUrl']);
+		$soap = new \SoapClient($this->settings['wsdlUrl']);
 		$userdata = $this->parseFields('fields.');
 		
 		

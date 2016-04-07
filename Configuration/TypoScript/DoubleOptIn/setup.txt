@@ -11,11 +11,13 @@ plugin.Tx_Formhandler.settings.predef.cleverreach_example_doubleoptin {
     langFile.1 = EXT:formhandler_cleverreach/Resources/Private/Language/formhandler.xml
     cssFile.1 = EXT:formhandler_cleverreach/Resources/Public/CSS/styles.css
     
-    additionalIncludePaths.1 = EXT:formhandler_cleverreach/Classes/Formhandler
-    
+
     formValuesPrefix = formhandler
-    
-    preProcessors.1.class = Tx_Formhandler_PreProcessor_CleverReach
+
+    additionalIncludePaths.1 = EXT:formhandler_cleverreach/Classes/Formhandler/Finisher
+    additionalIncludePaths.2 = EXT:formhandler_cleverreach/Classes/Formhandler/PreProcessor
+    additionalIncludePaths.3 = EXT:formhandler_cleverreach/Classes/Formhandler/Validator
+    preProcessors.1.class = Typoheads\Formhandler\PreProcessor\CleverReach
     
     masterTemplateFile = TEXT
     masterTemplateFile.value = EXT:formhandler_cleverreach/Resources/Private/Templates/mastertemplate.html
